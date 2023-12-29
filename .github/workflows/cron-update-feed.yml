@@ -1,0 +1,22 @@
+name: Update feed
+on: [workflow_dispatch]
+
+jobs:
+  update-feed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+      - name: Update feed
+        env:
+          PS_CSO_URL: ${{ secrets.PS_CSO_URL }}
+        run: ruby main.rb > district_10.json
+      - name: Release feed
+        uses: ncipollo/release-action@v1.13.0
+        with:
+          allowUpdates: true
+          artifactErrorsFailBuild: true
+          artifacts: district_10.json
+          makeLatest: true
+          replacesArtifacts: true
+          tag: current
