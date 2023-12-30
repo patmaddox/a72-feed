@@ -1,6 +1,8 @@
 name: Update feed
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '3/15 * * * *'
 
 jobs:
   update-feed:
