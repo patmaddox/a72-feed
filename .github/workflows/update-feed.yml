@@ -13,14 +13,12 @@ jobs:
       - name: Update feed
         env:
           PS_CSO_URL: ${{ secrets.PS_CSO_URL }}
-        run: ruby main.rb > district_10.json
-      - name: Release feed
-        uses: ncipollo/release-action@v1.13.0
-        with:
-          allowUpdates: true
-          artifactErrorsFailBuild: true
-          artifacts: district_10.json
-          artifactContentType: application/json
-          makeLatest: true
-          replacesArtifacts: true
-          tag: current
+        run: mkdir output && ruby main.rb > output/district_10.json
+      - name: Deploy feed
+        uses: s0/git-publish-subdir-action@92faf786f11dfa44fc366ac3eb274d193ca1af7e # develop as of 2024-02-15
+        env:
+          REPO: self
+          BRANCH: gh-pages
+          FOLDER: output
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CLEAR_GLOBS_FILE: clear-globs
