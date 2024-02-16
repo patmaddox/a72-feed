@@ -22,3 +22,4 @@ jobs:
           FOLDER: output
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CLEAR_GLOBS_FILE: clear-globs
+          SKIP_EMPTY_COMMITS: true
