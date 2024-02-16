@@ -19,7 +19,7 @@ module A72Feed
   end
 
   def self.time(s)
-    Time.parse(s).strftime("%H:%M")
+    Time.parse(s).strftime("%H:%M") rescue ""
   end
 
   def self.types(s)
