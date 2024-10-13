@@ -15,7 +15,7 @@ jobs:
           PS_CSO_URL: ${{ secrets.PS_CSO_URL }}
         run: mkdir output && ruby main.rb > output/district_10.json
       - name: Deploy feed
-        uses: s0/git-publish-subdir-action@92faf786f11dfa44fc366ac3eb274d193ca1af7e # develop as of 2024-02-15
+        uses: s0/git-publish-subdir-action@61eb9e6420447e7cbf010f7cce37103665c46bfa # develop as of 2024-10-13
         env:
           REPO: self
           BRANCH: gh-pages
