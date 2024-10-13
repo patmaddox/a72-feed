@@ -1,11 +1,14 @@
 require 'time'
 
 module A72Feed
+  @days = %w(Sunday Monday Tuesday Wednesday Thursday Friday Saturday)
   def self.google_meeting_to_tsml(gm)
     {
       "name" => gm[0],
       "slug" => gm[1],
+      "day" => @days.index(gm[3]),
       "time" => time(gm[2]),
+      "timezone" => "America/Los_Angeles",
       "location" => gm[11],
       "notes" => gm[13],
       "updated" => gm[18],

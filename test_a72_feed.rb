@@ -33,7 +33,9 @@ class A72FeedTest < Test::Unit::TestCase
     assert_equal tsml_meeting, {
       "name" => name,
       "slug" => id,
+      "day" => 0,
       "time" => "08:00",
+      "timezone" => "America/Los_Angeles",
       "location" => location,
       "notes" => notes,
       "updated" => updated,
