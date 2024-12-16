@@ -17,7 +17,9 @@ module A72Feed
       "city" => gm[6],
       "state" => gm[7],
       "postal_code" => gm[8],
-      "country" => gm[9]
+      "country" => gm[9],
+      "conference_url" => gm[15],
+      "conference_phone" => gm[16]
     }
   end
 

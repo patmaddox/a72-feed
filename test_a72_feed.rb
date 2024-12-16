@@ -19,8 +19,8 @@ class A72FeedTest < Test::Unit::TestCase
       district = "District 10",
       notes = "this is my favorite meeting",
       types = "O, TC, EN",
-      conference_url = "",
-      conference_phone = "",
+      conference_url = "http://zoom_url",
+      conference_phone = "+18005551234",
       venmo = "",
       updated = "2024-01-02 00:00:00",
       wwnotes = "",
@@ -44,7 +44,9 @@ class A72FeedTest < Test::Unit::TestCase
       "city" => city,
       "state" => state,
       "postal_code" => postal_code,
-      "country" => country
+      "country" => country,
+      "conference_url" => "http://zoom_url",
+      "conference_phone" => "+18005551234"
     }
   end
 end
